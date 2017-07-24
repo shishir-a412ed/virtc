@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/nvsandbox",
+	"ImportPath": "github.com/virtc",
 	"GoVersion": "go1.8",
 	"GodepVersion": "v62",
 	"Packages": [

@@ -12,18 +12,24 @@ var ImageCommand = cli.Command{
 	Subcommands: []cli.Command{
 		{
 			Name:        "pull",
-			Usage:       "nvsandbox images pull [OPTIONS] IMAGE",
+			Usage:       "Pull an OCI compliant image from the registry",
 			Description: "Pull an OCI compliant image from the registry",
+			Action: func(context *cli.Context) error {
+				if err := pullImage(context); err != nil {
+					return err
+				}
+				return nil
+			},
 		},
 		{
 			Name:        "push",
-			Usage:       "nvsandbox images push [OPTIONS] IMAGE",
+			Usage:       "Push an OCI compliant image to the registry",
 			Description: "Push an OCI compliant image to the registry",
 		},
 	},
+}
 
-	Action: func(context *cli.Context) error {
-		fmt.Println("HELLO IMAGE COMMAND")
-		return nil
-	},
+func pullImage(context *cli.Context) error {
+	fmt.Println("Pulling image")
+	return nil
 }

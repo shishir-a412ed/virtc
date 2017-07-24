@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/nvsandbox/cmd"
 	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
+	"github.com/virtc/cmd"
 	"os"
 )
 
@@ -12,7 +12,7 @@ func main() {
 	var logLevel, logFormat string
 
 	app := cli.NewApp()
-	app.Name = "nvidia-containerizer"
+	app.Name = "virtc"
 	app.Usage = "Containerize deep learning (DL) jobs."
 	app.Version = "0.0.1"
 	app.EnableBashCompletion = true
@@ -27,13 +27,13 @@ func main() {
 		cli.StringFlag{
 			Name:        "log-level",
 			Value:       "warn",
-			Usage:       "Set the log level: debug, info, warn, error, fatal, panic",
+			Usage:       "Set the log level: debug, info, [warn], error, fatal, panic",
 			Destination: &logLevel,
 		},
 		cli.StringFlag{
 			Name:        "log-format",
 			Value:       "text",
-			Usage:       "Set the log format: text or json",
+			Usage:       "Set the log format: [text] or json",
 			Destination: &logFormat,
 		},
 	}
@@ -72,12 +72,6 @@ func main() {
 		default:
 			return fmt.Errorf("Unknown log-level %q\n", logLevel)
 		}
-		return nil
-	}
-
-	app.Action = func(c *cli.Context) error {
-		fmt.Printf("Log level is %s\n", logLevel)
-		fmt.Printf("Log format is %s\n", logFormat)
 		return nil
 	}
 
