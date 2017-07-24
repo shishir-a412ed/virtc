@@ -38,8 +38,8 @@ func main() {
 
 	app.Commands = []cli.Command{
 		cmd.ImageCommand,
-		//containerCommand,
-		//volumeCommand,
+		cmd.ContainerCommand,
+		cmd.VolumeCommand,
 	}
 
 	app.Before = func(c *cli.Context) error {
