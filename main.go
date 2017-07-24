@@ -14,6 +14,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "nvidia-containerizer"
 	app.Usage = "Containerize deep learning (DL) jobs."
+	app.Version = "0.0.1"
 	app.EnableBashCompletion = true
 	app.Authors = []cli.Author{
 		{
