@@ -1,0 +1,24 @@
+{
+	"ImportPath": "github.com/nvsandbox",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v62",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/sirupsen/logrus",
+			"Comment": "1.0.2-11-g00386b3",
+			"Rev": "00386b3fbd637582f90cb17482dc3087646c0ac2"
+		},
+		{
+			"ImportPath": "github.com/urfave/cli",
+			"Comment": "v1.19.1-54-g4b90d79",
+			"Rev": "4b90d79a682b4bf685762c7452db20f2a676ecb2"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "7a4fde3fda8ef580a89dbae8138c26041be14299"
+		}
+	]
+}
